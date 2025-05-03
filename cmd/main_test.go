@@ -27,7 +27,7 @@ func TestСanSortBalls(t *testing.T) {
 		res := canSortBalls(item.Matrix)
 
 		if res != item.Answer {
-			t.Errorf("[%d] wrong Answer: got %d, expected %d",
+			t.Errorf("[%d] wrong Answer: got %s, expected %s",
 				caseNum, res, item.Answer)
 		}
 
