@@ -18,7 +18,6 @@ func main() {
 	defer out.Flush()
 
 	var n int
-
 	fmt.Fscan(in, &n)
 
 	matrix := make([][]int, n)
