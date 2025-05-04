@@ -39,7 +39,6 @@ func TestСanSortBalls(t *testing.T) {
 	}
 
 	for caseNum, item := range cases {
-
 		res := canSortBalls(item.Matrix)
 		if res != item.Answer {
 			t.Errorf("[%d] wrong Answer: got %s, expected %s",
@@ -62,7 +61,42 @@ func TestСanSortBallsWrongSizeMatrix(t *testing.T) {
 	}
 
 	for caseNum, item := range cases {
+		res := canSortBalls(item.Matrix)
+		if res != item.Answer {
+			t.Errorf("[%d] wrong Answer: got %s, expected %s",
+				caseNum, res, item.Answer)
+		}
+	}
+}
 
+func TestСanSortBallsZerosMatrix(t *testing.T) {
+
+	cases := []TestCaseSortBalls{
+		{
+			Matrix: [][]int{{0, 0}, {0, 0}},
+			Answer: yes,
+		},
+	}
+
+	for caseNum, item := range cases {
+		res := canSortBalls(item.Matrix)
+		if res != item.Answer {
+			t.Errorf("[%d] wrong Answer: got %s, expected %s",
+				caseNum, res, item.Answer)
+		}
+	}
+}
+
+func TestСanSortBallsOneElemMatrix(t *testing.T) {
+
+	cases := []TestCaseSortBalls{
+		{
+			Matrix: [][]int{{1}},
+			Answer: yes,
+		},
+	}
+
+	for caseNum, item := range cases {
 		res := canSortBalls(item.Matrix)
 		if res != item.Answer {
 			t.Errorf("[%d] wrong Answer: got %s, expected %s",
